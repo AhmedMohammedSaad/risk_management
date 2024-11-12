@@ -69,7 +69,7 @@ class _Alghsarah2State extends State<Alghsarah2> {
                       showDialog(
                         context: context,
                         builder: (context) => Dialog(
-                          insetAnimationDuration: const Duration(seconds: 50),
+                          insetAnimationDuration: const Duration(seconds: 4),
                           child: Center(
                             child: Text(
                               'P(L)=  $result',
@@ -87,7 +87,7 @@ class _Alghsarah2State extends State<Alghsarah2> {
                       showDialog(
                         context: context,
                         builder: (context) => Dialog(
-                          insetAnimationDuration: const Duration(seconds: 50),
+                          insetAnimationDuration: const Duration(seconds: 4),
                           child: Center(
                             child: Text(
                               "لا يمكن القسمة على صفر!",
@@ -106,7 +106,7 @@ class _Alghsarah2State extends State<Alghsarah2> {
                     showDialog(
                       context: context,
                       builder: (context) => Dialog(
-                        insetAnimationDuration: const Duration(seconds: 50),
+                        insetAnimationDuration: const Duration(seconds: 4),
                         child: Center(
                           child: Text(
                             "الرجاء إدخال قيم صحيحة في كلا الحقلين",

@@ -64,7 +64,7 @@ class _Alghsarah3State extends State<Alghsarah3> {
                         showDialog(
                           context: context,
                           builder: (context) => Dialog(
-                            insetAnimationDuration: const Duration(seconds: 50),
+                            insetAnimationDuration: const Duration(seconds: 4),
                             child: Center(
                               child: Text(
                                 'ادخل رقم يتراوح ما بين 0 و الواحد الصحيح',
@@ -84,7 +84,7 @@ class _Alghsarah3State extends State<Alghsarah3> {
                     showDialog(
                       context: context,
                       builder: (context) => Dialog(
-                        insetAnimationDuration: const Duration(seconds: 50),
+                        insetAnimationDuration: const Duration(seconds: 4),
                         child: Center(
                           child: Text(
                             "الرجاء إدخال قيم في الحقل",

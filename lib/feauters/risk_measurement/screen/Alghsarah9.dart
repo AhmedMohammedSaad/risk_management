@@ -1,4 +1,3 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,25 +6,21 @@ import 'package:risk_manage/core/widget/appbar.dart';
 import 'package:risk_manage/core/widget/text_form.dart';
 import 'package:risk_manage/core/widget/title_widget.dart';
 
-class Alghsarah5 extends StatefulWidget {
-  const Alghsarah5({super.key, required this.nameBar, required this.nameCanun});
+class Alghsarah9 extends StatefulWidget {
+  const Alghsarah9({super.key, required this.nameBar, required this.nameCanun});
   final String nameBar;
   final String nameCanun;
 
   @override
-  State<Alghsarah5> createState() => _Alghsarah5State();
+  State<Alghsarah9> createState() => _Alghsarah9State();
 }
 
-class _Alghsarah5State extends State<Alghsarah5> {
+class _Alghsarah9State extends State<Alghsarah9> {
   final TextEditingController controller1 = TextEditingController();
 
   final TextEditingController controller2 = TextEditingController();
 
-  final TextEditingController controller3 = TextEditingController();
-
-  final TextEditingController controller4 = TextEditingController();
   double result = 0;
-  double result1 = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,20 +34,20 @@ class _Alghsarah5State extends State<Alghsarah5> {
               TitleWidget(
                 nameTitle: widget.nameCanun,
                 nameCanun: "القانون",
-                canun: "u = Xi * P(Xi)",
+                canun: "C . V = 6 / u * 100",
               ),
               SizedBox(
                 height: 10.h,
               ),
               TextForm(
-                lableText: 'Xi',
+                lableText: '6',
                 controller: controller1,
               ),
               SizedBox(
                 height: 10.h,
               ),
               TextForm(
-                lableText: 'P(Xi)',
+                lableText: 'u',
                 controller: controller2,
               ),
               SizedBox(
@@ -66,18 +61,36 @@ class _Alghsarah5State extends State<Alghsarah5> {
                     double value1 = double.parse(controller1.text);
                     double value2 = double.parse(controller2.text);
                     setState(() {
-                      result = value1 * value2;
+                      result = value1 / value2 * 100;
                     });
                     // التحقق من أن value2 لا تساوي صفرًا لتجنب خطأ القسمة على الصفر
                     if (value2 != 0) {
-                      double result = value1 * value2;
+                      double result = value1 / value2 * 100;
                       showDialog(
                         context: context,
                         builder: (context) => Dialog(
                           insetAnimationDuration: const Duration(seconds: 4),
                           child: Center(
                             child: Text(
-                              'u=  $result',
+                              'C . V =  $result',
+                              style: GoogleFonts.rakkas(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: const Color.fromARGB(255, 36, 28, 28),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                          insetAnimationDuration: const Duration(seconds: 4),
+                          child: Center(
+                            child: Text(
+                              "لا يمكن القسمة على صفر!",
                               style: GoogleFonts.rakkas(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w400,
@@ -121,32 +134,39 @@ class _Alghsarah5State extends State<Alghsarah5> {
                 children: [
                   SizedBox(),
                   Text(
-                    "u= $result",
+                    "C . V= $result",
                     style: StyleTheme.styel1,
                     textAlign: TextAlign.right,
                   ),
                 ],
               ),
-//! **********************************************************************//
+              //! ******************************************************************
+              SizedBox(
+                height: 10.h,
+              ),
+              Text('_________________________________'),
+              SizedBox(
+                height: 10.h,
+              ),
 
               TitleWidget(
                 nameTitle: '',
-                nameCanun: "القانون الثاني",
-                canun: "u = X * P(L)",
+                nameCanun: "القانون",
+                canun: "C . V = 6 / M * 100",
               ),
               SizedBox(
                 height: 10.h,
               ),
               TextForm(
-                lableText: 'X',
-                controller: controller3,
+                lableText: '6',
+                controller: controller1,
               ),
               SizedBox(
                 height: 10.h,
               ),
               TextForm(
-                lableText: 'P(L)',
-                controller: controller4,
+                lableText: 'u',
+                controller: controller2,
               ),
               SizedBox(
                 height: 10.h,
@@ -156,21 +176,39 @@ class _Alghsarah5State extends State<Alghsarah5> {
                   if (controller1.text.isNotEmpty &&
                       controller2.text.isNotEmpty) {
                     // تحويل قيمة controller1 وcontroller2 إلى double لأن القسمة تتطلب أرقام عشرية
-                    double value3 = double.parse(controller3.text);
-                    double value4 = double.parse(controller4.text);
+                    double value1 = double.parse(controller1.text);
+                    double value2 = double.parse(controller2.text);
                     setState(() {
-                      result = value3 / value4;
+                      result = value1 / value2 * 100;
                     });
                     // التحقق من أن value2 لا تساوي صفرًا لتجنب خطأ القسمة على الصفر
-                    if (value4 != 0) {
-                      double result2 = value3 * value4;
+                    if (value2 != 0) {
+                      double result = value1 / value2 * 100;
                       showDialog(
                         context: context,
                         builder: (context) => Dialog(
                           insetAnimationDuration: const Duration(seconds: 4),
                           child: Center(
                             child: Text(
-                              'u=  $result2',
+                              'C . V =  $result',
+                              style: GoogleFonts.rakkas(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400,
+                                color: const Color.fromARGB(255, 36, 28, 28),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      );
+                    } else {
+                      showDialog(
+                        context: context,
+                        builder: (context) => Dialog(
+                          insetAnimationDuration: const Duration(seconds: 4),
+                          child: Center(
+                            child: Text(
+                              "لا يمكن القسمة على صفر!",
                               style: GoogleFonts.rakkas(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w400,
@@ -214,14 +252,14 @@ class _Alghsarah5State extends State<Alghsarah5> {
                 children: [
                   SizedBox(),
                   Text(
-                    "u= $result1",
+                    "C . V= $result",
                     style: StyleTheme.styel1,
                     textAlign: TextAlign.right,
                   ),
                 ],
               ),
               SizedBox(
-                height: 20.h,
+                height: 15,
               ),
             ],
           ),

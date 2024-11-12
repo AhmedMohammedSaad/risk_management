@@ -62,7 +62,7 @@ class _Alghsarah8State extends State<Alghsarah8> {
                     double value2 = double.parse(controller2.text);
 
                     // حساب القيمة التي تحت الجذر (X^2 P(Xi)) - (Xi P(Xi))
-                    double valueUnderRoot = value1 - value2;
+                    double valueUnderRoot = value1 - pow(value2, 2);
 
                     if (valueUnderRoot >= 0) {
                       // حساب الجذر التربيعي باستخدام sqrt() بعد استيراد مكتبة dart:math
@@ -75,10 +75,10 @@ class _Alghsarah8State extends State<Alghsarah8> {
                       showDialog(
                         context: context,
                         builder: (context) => Dialog(
-                          insetAnimationDuration: const Duration(seconds: 50),
+                          insetAnimationDuration: const Duration(seconds: 4),
                           child: Center(
                             child: Text(
-                              '6 = √($value1 - $value2) = $result',
+                              '6 = √ $result',
                               style: GoogleFonts.rakkas(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w400,
@@ -94,7 +94,7 @@ class _Alghsarah8State extends State<Alghsarah8> {
                       showDialog(
                         context: context,
                         builder: (context) => Dialog(
-                          insetAnimationDuration: const Duration(seconds: 50),
+                          insetAnimationDuration: const Duration(seconds: 4),
                           child: Center(
                             child: Text(
                               "القيمة تحت الجذر سالبة! لا يمكن حساب الجذر التربيعي.",
@@ -113,7 +113,7 @@ class _Alghsarah8State extends State<Alghsarah8> {
                     showDialog(
                       context: context,
                       builder: (context) => Dialog(
-                        insetAnimationDuration: const Duration(seconds: 50),
+                        insetAnimationDuration: const Duration(seconds: 4),
                         child: Center(
                           child: Text(
                             "الرجاء إدخال قيم صحيحة في كلا الحقلين",
@@ -141,7 +141,7 @@ class _Alghsarah8State extends State<Alghsarah8> {
                 children: [
                   SizedBox(),
                   Text(
-                    "6 = √($controller1 - $controller2) = $result",
+                    "6 = √ $result",
                     style: StyleTheme.styel1,
                     textAlign: TextAlign.right,
                   ),
