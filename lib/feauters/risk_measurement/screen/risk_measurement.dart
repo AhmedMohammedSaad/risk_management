@@ -7,6 +7,7 @@ import 'package:risk_manage/feauters/risk_measurement/screen/Alghsarah3.dart';
 import 'package:risk_manage/feauters/risk_measurement/screen/Alghsarah4.dart';
 import 'package:risk_manage/feauters/risk_measurement/screen/Alghsarah5.dart';
 import 'package:risk_manage/feauters/risk_measurement/screen/Alghsarah7.dart';
+import 'package:risk_manage/feauters/risk_measurement/screen/Alghsarah8.dart';
 import 'package:risk_manage/feauters/risk_measurement/screen/alghsarah1.dart';
 import 'package:risk_manage/feauters/risk_measurement/screen/alghsarh2.dart';
 import 'package:risk_manage/feauters/risk_measurement/screen/alghsarh6.dart';
@@ -105,6 +106,17 @@ class RiskMeasurement extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => Alghsarah7(
+                        nameBar: nameAppBar,
+                        nameCanun: riskMeasurementTitle[index].title,
+                      ),
+                    ),
+                  );
+                  break;
+                case 7:
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Alghsarah8(
                         nameBar: nameAppBar,
                         nameCanun: riskMeasurementTitle[index].title,
                       ),
